@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change color</title>
+
+    <style>
+        #wrapper p {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", function () {
+            var wrapper = document.getElementById("wrapper");
+            wrapper.addEventListener("click", function (change) {
+                change.target.style.backgroundColor = "red";
+            }, true);
+        }, false);
+
+    </script>
+</head>
+
+
+<body>
+    <div id="wrapper">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+            <div>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+
+            </div>
+    </div>
+</body>
+</html>

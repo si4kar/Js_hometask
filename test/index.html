@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEst</title>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var e = document.getElementById("list");
+            for(var i =0; i < e.childNodes.length; ++i)
+            {
+                var temp = e.childNodes[i];
+                if (temp.nodeType !=1)
+                {
+                    continue;
+                }
+
+                e.childNodes[i].style.color = "red";
+            }
+        }
+
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li>tem1</li>
+    <li>tem2</li>
+    <li>tem3</li>
+
+</ul>
+</body>
+</html>

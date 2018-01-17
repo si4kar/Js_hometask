@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard events</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var main = document.getElementById("main");
+
+            main.onkeydown = function (e) {
+                clear();
+                print("onkeydown event");
+                print("alt = " + e.altKey);
+                print("ctrl = " + e.ctrlKey);
+                print("shift = " + e.shiftKey);
+                print("charcode = " + String.fromCharCode(e.charCode));
+                print("keycode = " + e.keyCode);
+
+            }
+
+            main.onkeyup = function () {
+                print("onkeyup event");
+            }
+
+            main.onkeypress = function () {
+
+                print("onkeypress event");
+            }
+
+            function print(message) {
+                document.getElementById("output").innerHTML += message + "<br />";
+            }
+            function clear() {
+
+                document.getElementById("output").innerHTML = "";
+
+            }
+        }
+
+    </script>
+
+</head>
+<body id="main">
+
+<p>Start to press the buttons</p>
+<p id="output"></p>
+</body>
+</html>

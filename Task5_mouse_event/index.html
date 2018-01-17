@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse events</title>
+    <style type="text/css">
+        div {
+            background-color: aqua;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.addEventListener("load", init, false);
+
+        function init() {
+            var div = document.getElementsByTagName("div")[0];
+            div.addEventListener("mousemove", handler, false);
+        }
+        
+        function handler(e) {
+            var message = "";
+
+            message += e.button + "<br />";
+            message += "Alt: " +e.altKey + "<br />";
+            message += "Ctrl: " +e.ctrlKey + "<br />";
+            message += "Shift: " +e.shiftKey + "<br />";
+            message += "X: " +e.clientX + "<br />";
+            message += "Y: " +e.clientY + "<br />";
+            message += "ScreenX: " +e.screenX + "<br />";
+            message += "ScreenY: " +e.screenY + "<br />";
+            document.getElementById("out").innerHTML = message;
+
+            var div = document.getElementsByTagName("div")[0];
+
+            div.onmouseover = function () {
+                this.style.backgroundColor = "green";
+            }
+
+            div.onmouseout = function () {
+                this.style.backgroundColor = "yellow";
+            }
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div></div>
+
+<p id="out"></p>
+
+</body>
+</html>

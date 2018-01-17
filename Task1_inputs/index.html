@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fields inputs only 0 or 1</title>
+
+    <script>
+        window.addEventListener("load", function () {
+            var guard = document.getElementById("guard");
+
+            guard.addEventListener("keypress", function (check) {
+                if (String.fromCharCode(check.charCode) != '1'
+                    && String.fromCharCode(check.charCode) != '0')
+                {
+                    check.preventDefault();
+                }
+            },true);
+        },false);
+    </script>
+
+</head>
+<body>
+    <div id="guard">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+
+    </div>
+</body>
+</html>

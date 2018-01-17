@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag</title>
+
+    <script type="text/javascript">
+        (function () {
+            window.addEventListener("load", init, false);
+            function init() {
+                var elem = document.getElementById("elem");
+                elem.addEventListener("mousedown", function (e) {
+                    drag(this, e);
+                    debugger;
+                })
+            }
+
+            function drag(elementToDrag, event) {
+                //координаты миши в начале перетаскивания
+                var startX = event.clientX,
+                    startY = event.clientY;
+                //начальные координаты елемента, корорый будет перемещатся
+                var origX = elementToDrag.offsetLeft,
+                    origY = elementToDrag.offsetTop;
+                //разница межды координатами миши и перемещения
+                var deltaX = startX - origX,
+                    deltaY  = startY - origY;
+
+                document.addEventListener("mousemove", moveHandler, true);
+                document.addEventListener("mouseup", upHandler, true);
+                
+                function moveHandler(e) {
+                    if (!e) e = window.event;
+
+                    //перемещение елемента с учетом отступа от первоночального клика
+                    elementToDrag.style.left = (e.clientX - deltaX) + "px";
+                    elementToDrag.style.top = (e.clientY - deltaY) + "px";
+                }
+                
+                function upHandler(e) {
+                    if (!e) e = window.event;
+
+                    document.removeEventListener("mouseup", upHandler, true);
+                    document.removeEventListener("mousemove", moveHandler, true);
+                }
+            }
+
+        }) ()
+
+    </script>
+</head>
+<body>
+    <div id="elem" style="width: 100px; height: 100px; background-color: green"></div>
+</body>
+</html>
