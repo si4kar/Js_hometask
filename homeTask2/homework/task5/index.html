@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task5</title>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            document.getElementById("button").onclick = push();
+
+        };
+
+        function push() {
+            var text = document.getElementById("field");
+            document.getElementById("test").innerHTML = text;
+        };
+
+
+
+    </script>
+
+</head>
+<body>
+<input type="text" id="field">
+<input type="button" id="button" value="Push me">
+<marquee behavior="alternate" direction="left" bgcolor="#ffcc00" id="test">
+</marquee>
+</body>
+</html>
