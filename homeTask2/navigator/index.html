@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator</title>
+
+    <script type="text/javascript">
+        var browserInfo = "Info about browser:\n";
+
+        for (var propname in navigator) {
+                browserInfo += propname + ": " + navigator[propname] + "\n";
+        }
+        alert(browserInfo);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

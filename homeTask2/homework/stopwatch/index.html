@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+
+    <style type="text/css">
+
+        h2  {
+            padding-left: 35px;
+        }
+        #watch {
+            margin: 20px 0 0 40px;
+        }
+        b {
+            padding-right: 5px;
+        }
+
+        #buttons {
+            padding: 20px 0 0 40px;
+        }
+
+        #stop {
+
+            display: none;
+        }
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var sec = 0;
+            var min = 0;
+            var hour = 0;
+            var intervalHandler;
+
+            function count() {
+
+                if (sec <10)
+                {
+                    get("sec").innerHTML = '0' + sec;
+                }
+                else
+                {
+                    get("sec").innerHTML = sec;
+                }
+
+                if (min <10)
+                {
+                    get("min").innerHTML = '0' + min;
+                }
+                else
+                {
+                    get("min").innerHTML = min;
+                }
+
+                if (hour <10)
+                {
+                    get("hour").innerHTML = '0' + hour;
+                }
+
+                else
+                {
+                    get("hour").innerHTML = hour;
+                }
+
+                if(sec < 60) sec++;
+                else if (sec = 60)
+                {
+                    if(min<60) {
+                        min = min + 1;
+                        sec = 0;
+                    }
+                    else if (min = 60)
+                    {
+                        if (hour <24) {
+                            hour = hour + 1;
+                            min = 0;
+                            sec = 0;
+                        }
+
+                        else if (hour = 24)
+                        {
+                            hour = 0;
+                            min = 0;
+                            sec = 0;
+                        }
+                    }
+                }
+            }
+
+            get("start").onclick = function () {
+                intervalHandler = setInterval(count, 1000);
+                get("start").style.display = 'none';
+                get("stop").style.display = 'inline';
+
+            };
+
+            get("stop").onclick = function () {
+                clearInterval(intervalHandler);
+                get("stop").style.display = 'none';
+                get("start").style.display = 'inline';
+
+            }
+
+            get("reset").onclick = function () {
+                sec = 0;
+                min = 0;
+                hour = 0;
+                count();
+            }
+
+        };
+
+        var get = function (id) {
+            return document.getElementById(id);
+        } 
+
+    </script>
+
+</head>
+<body>
+    <h2>Stopwatch</h2>
+    <div id="watch">
+        <b id="hour">00</b>
+        <b>:</b>
+        <b id="min">00</b>
+        <b>:</b>
+        <b id="sec">00</b>
+    </div>
+<div id="buttons">
+    <input type="button" id="start" value="start">
+    <input type="button" id="stop" value="stop">
+    <input type="button" id="reset" value="reset">
+</div>
+
+</body>
+</html>

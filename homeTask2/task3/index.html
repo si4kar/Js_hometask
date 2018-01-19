@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task3</title>
+    <script type="text/javascript">
+
+
+            window.addEventListener("load", init, false);
+
+            function init() {
+                document.getElementById("calc").onclick = calculate;
+
+                function calculate() {
+                    var field = document.getElementById("field");
+                    var pattern1 = /\d{1,}/g;
+                    var pattern2 = /[+,\-,*,\/]/g;
+                    var numbers = field.value.match(pattern1);
+                    var characters = field.value.match(pattern2);
+                    var result  = 0;
+
+
+                    for (var i = 0; i < numbers.length-1; i++) {
+                        if (i != numbers.length)
+                        {
+                            switch (characters[i]) {
+                                case '+':
+                                    result = +numbers[i] + +numbers[i + 1];
+                                    numbers[i+1] = result;
+                                    break;
+                                case '-':
+                                    result = +numbers[i] - +numbers[i + 1];
+                                    numbers[i+1] = result;
+                                    break;
+                                case '*':
+                                    result = +numbers[i] * +numbers[i + 1];
+                                    numbers[i+1] = result;
+                                    break;
+                                case '/':
+                                    result = +numbers[i] / +numbers[i + 1];
+                                    numbers[i+1] = result;
+                                    break;
+                            }
+                         //   debugger;
+                        }
+                        else break;
+
+                    }
+
+                     document.getElementById("output").innerHTML = result;
+
+                }
+
+            }
+
+    </script>
+
+</head>
+<body>
+<input type="text" id="field">
+
+ <input type="button" id="calc" value="calc">
+<p id="output"></p>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keypress combo</title>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            document.addEventListener('keydown', check);
+
+
+            function check(e) {
+
+                if (e.code === 'KeyS' && !e.shiftKey && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)){
+                    e.preventDefault();
+                    alert("Saved success");
+                }
+
+                else if (e.code === 'KeyS' && e.shiftKey && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                    e.preventDefault();
+                    alert("Saved all");
+                }
+
+                else if (e.code === 'KeyA' && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                    e.preventDefault();
+                    alert("Choose all");
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<p>Please press the key</p>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color div</title>
+
+    <style type="text/css">
+        #wrapper {
+            position: relative;
+        }
+
+        #div1, #div2, #div3 {
+            float: left;
+            width: 350px;
+            padding-left: 50px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            document.addEventListener('keypress', changeDivColor);
+            
+            function changeDivColor(e) {
+                var keySelect  = e.key.toLowerCase();
+                var wrapper = document.getElementById("wrapper");
+
+                switch (keySelect) {
+                    case 'r': wrapper.style.color = 'red';
+                    break;
+
+                    case 'g': wrapper.style.color = 'green';
+                    break;
+
+                    case 'b': wrapper.style.color = 'blue';
+                    break;
+
+                }
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<div id="wrapper">
+    <div id="div1">
+    <p>Lorem ipsum dolor sit amet, porro nonumes mea ex, pri ad quis congue. Posse indoctum corrumpit has no. Eu erat nonumes sapientem cum. Debitis scriptorem disputationi te has.
+
+        Vix legimus luptatum et, purto nonumes iracundia ut sed. Sea et numquam luptatum concludaturque, dicit molestiae per ad. Pro et consul explicari maluisset, ea nostrud consequat usu. No adhuc efficiantur mel. Habemus argumentum vix an, pro ne homero vocent mediocrem. No timeam scripta civibus sit.
+
+        Sit te dolorem iudicabit, pri ad molestiae quaerendum mediocritatem. Mucius maiestatis ei eos, no duo dicant atomorum ullamcorper. Ea nibh mutat appellantur has, commune antiopam ea eam, mea choro expetendis efficiantur an. Eum et iudico equidem dolorem, pri ut dictas voluptatibus. Vim et omnesque percipitur. Pro ex quem probatus definiebas, cum ex indoctum appellantur. Pri at facilis docendi, saepe placerat eum te.
+
+        Quem illud pro ne, graece tibique philosophia id duo. In ius timeam vivendo, quot homero eirmod nec ex. Quas assueverit accommodare at nec, debet persequeris pro ad. Nec ut laudem consequat, zril semper adipiscing ea eos.
+
+        Eu utinam adipisci pri, ei vim summo insolens inciderint. Ut phaedrum tincidunt pri, in vim inani cetero scriptorem. Cu qui nonumy persequeris comprehensam, sanctus detracto consetetur mei at, ne vel tation alterum copiosae. Nonumes omnesque ea usu, alia tacimates eos cu. Fastidii deterruisset in eam, et vix tale regione iudicabit, te sed dolor abhorreant. Odio agam atomorum te eum.</p>
+    </div>
+<div id="div2">
+    <p>Lorem ipsum dolor sit amet, porro nonumes mea ex, pri ad quis congue. Posse indoctum corrumpit has no. Eu erat nonumes sapientem cum. Debitis scriptorem disputationi te has.
+
+        Vix legimus luptatum et, purto nonumes iracundia ut sed. Sea et numquam luptatum concludaturque, dicit molestiae per ad. Pro et consul explicari maluisset, ea nostrud consequat usu. No adhuc efficiantur mel. Habemus argumentum vix an, pro ne homero vocent mediocrem. No timeam scripta civibus sit.
+
+        Sit te dolorem iudicabit, pri ad molestiae quaerendum mediocritatem. Mucius maiestatis ei eos, no duo dicant atomorum ullamcorper. Ea nibh mutat appellantur has, commune antiopam ea eam, mea choro expetendis efficiantur an. Eum et iudico equidem dolorem, pri ut dictas voluptatibus. Vim et omnesque percipitur. Pro ex quem probatus definiebas, cum ex indoctum appellantur. Pri at facilis docendi, saepe placerat eum te.
+
+        Quem illud pro ne, graece tibique philosophia id duo. In ius timeam vivendo, quot homero eirmod nec ex. Quas assueverit accommodare at nec, debet persequeris pro ad. Nec ut laudem consequat, zril semper adipiscing ea eos.
+
+        Eu utinam adipisci pri, ei vim summo insolens inciderint. Ut phaedrum tincidunt pri, in vim inani cetero scriptorem. Cu qui nonumy persequeris comprehensam, sanctus detracto consetetur mei at, ne vel tation alterum copiosae. Nonumes omnesque ea usu, alia tacimates eos cu. Fastidii deterruisset in eam, et vix tale regione iudicabit, te sed dolor abhorreant. Odio agam atomorum te eum.</p>
+    </div>
+<div id="div3">
+    <p>Lorem ipsum dolor sit amet, porro nonumes mea ex, pri ad quis congue. Posse indoctum corrumpit has no. Eu erat nonumes sapientem cum. Debitis scriptorem disputationi te has.
+
+        Vix legimus luptatum et, purto nonumes iracundia ut sed. Sea et numquam luptatum concludaturque, dicit molestiae per ad. Pro et consul explicari maluisset, ea nostrud consequat usu. No adhuc efficiantur mel. Habemus argumentum vix an, pro ne homero vocent mediocrem. No timeam scripta civibus sit.
+
+        Sit te dolorem iudicabit, pri ad molestiae quaerendum mediocritatem. Mucius maiestatis ei eos, no duo dicant atomorum ullamcorper. Ea nibh mutat appellantur has, commune antiopam ea eam, mea choro expetendis efficiantur an. Eum et iudico equidem dolorem, pri ut dictas voluptatibus. Vim et omnesque percipitur. Pro ex quem probatus definiebas, cum ex indoctum appellantur. Pri at facilis docendi, saepe placerat eum te.
+
+        Quem illud pro ne, graece tibique philosophia id duo. In ius timeam vivendo, quot homero eirmod nec ex. Quas assueverit accommodare at nec, debet persequeris pro ad. Nec ut laudem consequat, zril semper adipiscing ea eos.
+
+        Eu utinam adipisci pri, ei vim summo insolens inciderint. Ut phaedrum tincidunt pri, in vim inani cetero scriptorem. Cu qui nonumy persequeris comprehensam, sanctus detracto consetetur mei at, ne vel tation alterum copiosae. Nonumes omnesque ea usu, alia tacimates eos cu. Fastidii deterruisset in eam, et vix tale regione iudicabit, te sed dolor abhorreant. Odio agam atomorum te eum.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

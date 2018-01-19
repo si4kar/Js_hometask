@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task4</title>
+
+    <style type="text/css">
+        a {
+            text-decoration: underline;
+        }
+
+    </style>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var flag1 = false;
+            var flag2 = false;
+            var flag3 = false;
+            var a1, a2, a3;
+
+            document.getElementById("lesson1").onclick = function () {
+                if (flag1 === false) openLesson1();
+                else closeLesson1();
+            };
+            document.getElementById("lesson2").onclick = function () {
+                if (flag2 === false) openLesson2();
+                else closeLesson2();
+            };
+            document.getElementById("lesson3").onclick = function () {
+                if (flag3 === false) openLesson3();
+                else closeLesson3();
+            };
+
+
+            function openLesson1( ) {
+                flag1 = true;
+                a1 = window.open("lesson1.html", "Lesson 1", "width=400, height=400, status=yes, resizable=no");
+                document.getElementById("lesson1").innerHTML = "Lesson 1 is already open";
+            }
+
+            function closeLesson1() {
+               flag1 = false;
+                a1.close();
+                document.getElementById("lesson1").innerHTML = "JS Lesson 1";
+            }
+
+            function openLesson2( ) {
+                flag2 = true;
+                a2 = window.open("lesson2.html", "Lesson 2", "width=400, height=400, status=yes, resizable=no");
+                document.getElementById("lesson2").innerHTML = "Lesson 2 is already open";
+            }
+
+            function closeLesson2() {
+               flag2 = false;
+                a2.close();
+                document.getElementById("lesson2").innerHTML = "JS Lesson 2";
+            }
+
+            function openLesson3( ) {
+                flag3 = true;
+                a3 = window.open("lesson3.html", "Lesson 3", "width=400, height=400, status=yes, resizable=no");
+                document.getElementById("lesson3").innerHTML = "Lesson 3 is already open";
+            }
+
+            function closeLesson3() {
+               flag3 = false;
+                a3.close();
+                document.getElementById("lesson3").innerHTML = "JS Lesson 3";
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+<div>
+    <p><a id="lesson1"> JS Lesson 1</a></p>
+    <p><a id="lesson2"> JS Lesson 2</a></p>
+    <p><a id="lesson3"> JS Lesson 3</a></p>
+</div>
+</body>
+</html>

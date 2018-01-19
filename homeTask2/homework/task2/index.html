@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2</title>
+
+    <script type="text/javascript">
+
+            //?a=10&b=20
+
+        window.onload = function () {
+            var args = getQueryString();
+            var e = document.createElement("p");
+            var sum = +args.a + +args.b;
+            e.innerHTML = "Sum a and b =" + sum;
+
+            document.body.appendChild(e);
+        };
+
+        function getQueryString() {
+            var args = {};
+            var query = location.search.substring(1);
+            var pairs = query.split("&");
+
+            for (var i = 0; i < pairs.length; i++)
+            {
+                var pos = pairs[i].indexOf('=');
+                if (pos === -1) continue;
+
+                var argname = pairs[i].substring(0, pos);
+                var value = pairs[i].substring(pos +1);
+
+                args[argname] = value;
+            }
+            return args;
+        }
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

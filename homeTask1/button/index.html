@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button</title>
+    <style type="text/css">
+        #buttonWrapper {
+            width: 300px;
+            height: 300px;
+            padding: 30px;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        #myButton {
+            position: absolute;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var myButton = document.getElementById("myButton");
+
+            myButton.addEventListener('mouseover', getButton);
+
+
+            function getButton(e) {
+                var x = random(e.target.clientWidth, 300);
+                var y = random(e.target.clientHeight, 300);
+
+                e.target.style.left = x - e.target.clientWidth + 'px';
+                e.target.style.top = y - e.target.clientHeight + 'px';
+            }
+
+            function random(min, max) {
+                var position = min + Math.random() * (max - min);
+
+                position = Math.floor(position);
+
+                return position;
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+<div id="buttonWrapper">
+    <input type="button" value="Догони меня" id="myButton">
+</div>
+</body>
+</html>

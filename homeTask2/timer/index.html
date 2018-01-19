@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <style type="text/css">
+
+
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var counter = 0;
+            var intervalHandler;
+
+            function count() {
+                get("output").innerHTML = counter;
+                counter++;
+            }
+
+            get("startButton").onclick = function () {
+                intervalHandler = setInterval(count, 1000);
+            };
+            
+            get("stopButton").onclick = function () {
+                clearInterval(intervalHandler);
+            }
+        };
+
+        var get = function (id) {
+            return document.getElementById(id);
+        }
+
+    </script>
+
+
+</head>
+<body>
+    <p id="output"> </p>
+    <input type="button" value="start" id="startButton">
+    <input type="button" value="stop" id="stopButton">
+</body>
+</html>

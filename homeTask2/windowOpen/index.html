@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window opener</title>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            document.getElementById("open").onclick = openButtonHandler;
+            document.getElementById("close").onclick = closeButtonHandler;
+
+            var w;
+
+            function openButtonHandler( ) {
+                w =window.open("window.html", "Window name", "width=400, height=400, status=yes, resizable=no");
+            }
+
+            function closeButtonHandler() {
+                    w.close();
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="open" value="open">
+<input type="button" id="close" value="close">
+</body>
+</html>
