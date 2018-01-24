@@ -8,24 +8,24 @@
 
         window.onload = function () {
 
-            document.getElementById("button").onclick = push();
+            document.getElementById("button").onclick = function () {
 
-        };
+                var text = document.getElementById("field").value;
+                document.getElementById("test").innerHTML = '<marquee direction="left" bgcolor="#ff0000">' + text + '</marquee>';
+            }
 
-        function push() {
-            var text = document.getElementById("field");
-            document.getElementById("test").innerHTML = text;
-        };
-
-
+        }
 
     </script>
 
 </head>
+
 <body>
 <input type="text" id="field">
 <input type="button" id="button" value="Push me">
-<marquee behavior="alternate" direction="left" bgcolor="#ffcc00" id="test">
-</marquee>
+<div id="test"></div>
+
+
+
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task6</title>
+</head>
+<script type="text/javascript">
+
+
+    window.addEventListener("load", function () {
+        var p, text = '',
+            temp = document.getElementById("paragraph");
+
+        for(var i=0; i<10; i++){
+            p = document.createElement("p");
+            p.innerHTML = "Lorem ipsun";
+
+            temp.appendChild(p);
+
+            if(i>=3 && i <=6){
+                text +=p.textContent + " ";
+            }
+
+        }
+    console.log(text);
+
+    })
+
+</script>
+
+<body>
+
+    <div id="paragraph"></div>
+
+</body>
+</html>
